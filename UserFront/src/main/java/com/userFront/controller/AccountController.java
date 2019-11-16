@@ -31,12 +31,11 @@ public class AccountController {
 
 	@Autowired
 	private TransactionService transactionService;
-
+// this changed by venkat
 	@RequestMapping("/primaryAccount")
 	public String primaryAccount(Model model, Principal principal) {
 		List<PrimaryTransaction> primaryTransactionList = transactionService
 				.findPrimaryTransactionList(principal.getName());
-
 		User user = userService.findByUsername(principal.getName());
 		PrimaryAccount primaryAccount = user.getPrimaryAccount();
 
